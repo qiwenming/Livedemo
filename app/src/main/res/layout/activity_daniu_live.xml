@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".daniu.DaniuLiveActivity">
+
+    <SurfaceView
+        android:id="@+id/surfaceView_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <LinearLayout style="@style/LinearLayout_V_WM_HW">
+        <!--音/视频-->
+        <LinearLayout style="@style/LinearLayout_H_WM_HW">
+            <TextView
+                style="@style/TextView_Lable_Style"
+                android:text="音/视频" />
+
+            <RadioGroup
+                android:id="@+id/av_rg"
+                style="@style/RadioGroup_Style">
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/av_all_rb"
+                    android:checked="true"
+                    style="@style/RadioButton_Style"
+                    android:text="音视频" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/av_a_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="纯音频" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/av_v_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="纯视频" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--watermark 水印-->
+        <LinearLayout style="@style/LinearLayout_H_WM_HW">
+            <TextView
+                style="@style/TextView_Lable_Style"
+                android:text="水印" />
+
+            <RadioGroup
+                android:id="@+id/watermark_rg"
+                style="@style/RadioGroup_Style">
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:checked="true"
+                    android:id="@+id/watermark_all_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="全部" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/watermark_img_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="图片" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/watermark_text_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="文字" />
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/watermark_none_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="无" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--分辨率-->
+        <LinearLayout style="@style/LinearLayout_H_WM_HW">
+            <TextView
+                style="@style/TextView_Lable_Style"
+                android:text="分辨率" />
+
+            <RadioGroup
+                android:id="@+id/rp_rg"
+                style="@style/RadioGroup_Style">
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:checked="true"
+                    android:id="@+id/rp_xh_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="超高" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/rp_h_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="高" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/rp_m_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="中" />
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/rp_l_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="低" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--本地是否录像-->
+        <LinearLayout style="@style/LinearLayout_H_WM_HW">
+            <TextView
+                style="@style/TextView_Lable_Style"
+                android:text="本地是否录像" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:checked="true"
+                android:id="@+id/record_rb"
+                style="@style/RadioButton_Style"/>
+        </LinearLayout>
+
+
+        <LinearLayout style="@style/LinearLayout_H_WM_HW">
+            <TextView
+                style="@style/TextView_Lable_Style"
+                android:text="是否静音" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:checked="true"
+                android:id="@+id/volume_rb"
+                style="@style/RadioButton_Style"/>
+        </LinearLayout>
+
+        <!--分辨率-->
+        <LinearLayout style="@style/LinearLayout_H_WM_HW">
+            <TextView
+                style="@style/TextView_Lable_Style"
+                android:text="软/硬编码" />
+
+            <RadioGroup
+                android:id="@+id/code_rg"
+                style="@style/RadioGroup_Style">
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:checked="true"
+                    android:id="@+id/code_sofr_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="软编码" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/code_hard_rb"
+                    style="@style/RadioButton_Style"
+                    android:text="硬编码" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--本地是否录像-->
+        <LinearLayout style="@style/LinearLayout_H_WM_HW">
+            <TextView
+                style="@style/TextView_Lable_Style"
+                android:text="输入流地址" />
+
+            <EditText
+                style="@style/TextView_Lable_Style"
+                android:id="@+id/url_edt"
+                android:layout_width="match_parent"
+                android:hint="输入流地址"
+                android:text="rtmp://192.168.1.131/live/stream"
+                />
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            style="@style/TextView_Lable_Style"
+            android:id="@+id/start_end_btn"
+            android:text="开始推流" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
